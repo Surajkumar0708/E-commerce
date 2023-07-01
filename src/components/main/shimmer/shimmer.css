@@ -1,0 +1,43 @@
+.product_shimmer {
+  display: flex;
+  justify-content: center;
+  width: 25%;
+  height: 45vh;
+  margin: 10px;
+  text-align: center;
+  padding: 10px;
+  /* background-color: rgba(242, 241, 241, 0.378); */
+  box-shadow: 0 4px 7px 0 rgb(218 220 230 / 60%);
+}
+
+.image_shimmer {
+  width: 150px;
+  height: 180px;
+  background-color: rgba(132, 130, 130, 0.378);
+}
+
+p{
+    height: 20px;
+    width: 50px;
+    margin-top: 10px;
+}
+
+.stroke {
+  height: 15px;
+  background: #777;
+}
+
+.animate {
+  animation: shimmer 2s;
+  animation-iteration-count: infinite;
+  background: linear-gradient(to right, #e6e6e6 5%, #cccccc 25%, #e6e6e6 35%);
+  background-size: 1000px 100%;
+}
+@keyframes shimmer {
+  from {
+    background-position: -1000px 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}

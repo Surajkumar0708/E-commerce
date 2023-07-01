@@ -1,0 +1,100 @@
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    box-shadow: 2px 2px 10px rgba(84, 82, 82, 0.623);
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}
+
+.header > .left_header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header > .left_header > nav > ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+}
+
+.header > .left_header > nav > ul > li {
+    list-style: none;
+}
+
+.header > .left_header > nav > ul > li > a{
+    text-decoration: none;
+    flex: 1;
+    padding: 4px 9px;
+    color: black;
+}
+
+.header > .left_header > nav > ul > li > a:hover,
+.header > .left_header > nav > ul > li > a:focus {
+    border-radius: 4px;
+    background-color: rgba(84, 82, 82, 0.623);
+    color: white;
+}
+
+.right_nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: x-large;
+}
+
+.right_nav > div{
+    cursor: pointer;
+}
+
+.right_nav > div > i{
+    border-right: 2px solid black ;
+    padding:0 15px 0;
+}
+
+.right_nav > div > a{
+    color: black;
+    border-right: 2px solid black ;
+    padding:0 15px 0;
+}
+
+.right_nav > div > a > i > span{
+    font-size: 13px;
+    position: relative;
+    bottom: 17px;
+}
+
+.right_nav > button{
+    background-color: rgba(196, 48, 48, 0.84);
+    color: white;
+    border: none;
+    margin-left: 15px;
+    padding: 6px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.search_container{
+    position: relative;
+    transition: 1s ease-out;
+}
+
+.searchbar{
+    padding: 5px 10px;
+    width: 200px;
+    
+}
+
+.discard{
+    position: absolute;
+    right: 0px;
+    top: 7px;
+    border-right: none !important;
+}

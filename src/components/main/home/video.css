@@ -1,0 +1,7 @@
+.video_container{
+    /* transform: translate(-50%, -50%) scale(0); */
+    transition: 1s;
+    width: 90%;
+    height: 90vh;
+    border: 1px solid red;
+}

@@ -1,0 +1,29 @@
+.cart-container{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.total-container{
+    width: 65%;
+    text-align: right;
+}
+
+.place-oreder-btn{
+    background-color: rgba(196, 48, 48, 0.84);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-transform: capitalize;
+    border-radius: 3px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.place-oreder-btn:hover{
+    background-color: rgba(196, 48, 48, 7.84);
+}
