@@ -43,3 +43,32 @@
     font-weight: bold;
     cursor: pointer;
 }
+
+.pincode{
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    margin: 20px 0;
+}
+
+.pincode > input{
+    padding: 5px;
+    font-size: 15px;
+    margin-bottom: 10px;
+    border: none;
+    border-bottom: 2px solid red;
+}
+
+.pincode > input::-webkit-outer-spin-button,
+.pincode > input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.red_str{
+    color: red;
+}
+
+.green_str {
+    color: green;
+}

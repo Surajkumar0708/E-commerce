@@ -6,20 +6,34 @@ import { useDispatch } from "react-redux";
 import { setProductToCart } from "../store/actions/cart-action";
 
 import "./product-details.css";
+import Toast from "../toast-msg/toast";
 
 const ProductDetails = () => {
-    const dispatch = useDispatch()
+  const pincodeRef = React.useRef(null)
+  const [pinAvailCheckMsg, setPinAvailCheckMsg] = React.useState("");
+  const pincodeArr = [497339, 497335, 497442]
+  const [isToastShow, setIsToastShow] = React.useState(false)
+  const dispatch = useDispatch()
   const { id } = useParams();
-  const { productList, error, isLoading } = useFetchData(
+  const { productList, isLoading } = useFetchData(
     `https://fakestoreapi.com/products/${id}`
-  );
+    );
   const { title, image, description, price, rating, category } = productList;
   const ratingStyle = rating?.rate >= 4 ? "green" : "red"
-
-  console.log("======== product-details",productList);
+  const pincodeStyle = pinAvailCheckMsg === "Product is not available on selected pincode" ? "red_str" : "green_str"
 
   const setProductToCart2 = () => {
     setProductToCart(productList, dispatch)
+    setIsToastShow(true)
+  }
+
+  const checkAvailability = () => {
+    const enteredPincode = pincodeRef.current.value
+    if(enteredPincode && pincodeArr.includes(+enteredPincode)) {
+      setPinAvailCheckMsg("Delivery is available on selected pincode");
+    } else {
+      setPinAvailCheckMsg("Product is not available on selected pincode");
+    }
   }
 
   return (
@@ -39,10 +53,16 @@ const ProductDetails = () => {
             <p className={ratingStyle}><i class="fa-solid fa-star"></i> {rating?.rate}</p>
             <div className="add-to-cart-btn">
             <button onClick={setProductToCart2}>Add to Cart</button>
+            <div className="pincode">
+              <input ref={pincodeRef} id="pincode" type="number" placeholder="Enter Pincode" />
+              {pinAvailCheckMsg && <p className={pincodeStyle}>{pinAvailCheckMsg}</p>}
+              <button onClick={checkAvailability}>Check Availability</button>
+            </div>
           </div>
           </div>
         </div>
       )}
+      {!isLoading && isToastShow && <Toast setIsToastShow={setIsToastShow} msg={`${category?.toLocaleUpperCase()} is added to CART successfully`}/>}
     </div>
   );
 };

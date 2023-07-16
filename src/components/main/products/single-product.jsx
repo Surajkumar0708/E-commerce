@@ -9,7 +9,6 @@ const Product = ({ product }) => {
       ? `${description.substring(0, 60)}...`
       : description;
 
-  const productTitle = title.length > 29 ? `${title.substring(0,30)}...` : title;
   const ratingStyle = rating.rate >= 4 ? "green" : "red"
 
   return (

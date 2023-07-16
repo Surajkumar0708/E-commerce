@@ -23,12 +23,10 @@ const Cart = () => {
     return (
         <div className="cart-container">
             {cartList.length ? cartList.map(product => <CartItem key={product.id} product={product} />) : "Your cart is empty"}
-            <div className="total-container">
+            {cartList.length && <div className="total-container">
                 <h2>Total Cart Amount = <span>&#8377;</span> {(totalCartAmount * 87).toFixed()}</h2>
-                
-                    <Link className="place-oreder-btn" to="/checkout-form">Place Order</Link>
-                
-            </div>
+                <Link className="place-oreder-btn" to="/checkout-form">Place Order</Link>
+            </div>}
         </div>
     )
 }
