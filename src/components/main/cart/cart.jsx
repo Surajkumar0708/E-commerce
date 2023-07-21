@@ -18,8 +18,7 @@ const Cart = () => {
         setTotalCartItem(totalAmount)
     },[cartList])
     
-    console.log("total amount",totalAmount);
-    console.log("=======",cartList);
+    console.log("======= suraj",cartList);
     return (
         <div className="cart-container">
             {cartList.length ? cartList.map(product => <CartItem key={product.id} product={product} />) : "Your cart is empty"}
