@@ -9,10 +9,15 @@
     background-color: #fff;
 }
 
+.header_dark {
+    color: white;
+    background-color: black;
+}
+
 .header > .left_header{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: centergb(63, 56, 56)
 }
 
 .header > .left_header > nav > ul {
@@ -33,6 +38,13 @@
     color: black;
 }
 
+.header_dark > .left_header > nav > ul > li > a,
+.header_dark > .right_nav > div > a,
+.header_dark > .discard
+{
+    color: white;
+}
+
 .header > .left_header > nav > ul > li > a:hover,
 .header > .left_header > nav > ul > li > a:focus {
     border-radius: 4px;
@@ -51,10 +63,10 @@
     cursor: pointer;
 }
 
-.right_nav > div > i{
+/* .right_nav > div > i{
     border-right: 2px solid black ;
     padding:0 15px 0;
-}
+} */
 
 .right_nav > div > a{
     color: black;
@@ -68,7 +80,7 @@
     bottom: 17px;
 }
 
-.right_nav > button{
+.right_nav > .logout_btn{
     background-color: rgba(196, 48, 48, 0.84);
     color: white;
     border: none;
@@ -81,6 +93,53 @@
     cursor: pointer;
 }
 
+.switch_dark {
+    display: none;
+}
+
+.switch_label{
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.dark:checked + .switch_label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: 0.2s;
+}
+
+.dark:checked + .switch_label {
+    background-color: white;
+}
+
+.dark:checked + .switch_label::before {
+    left: calc(100% - 20px);
+}
+
+.switch_label::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    transition: 0.2s;
+}
+
 .search_container{
     position: relative;
     transition: 1s ease-out;
@@ -89,12 +148,12 @@
 .searchbar{
     padding: 5px 10px;
     width: 200px;
-    
 }
 
 .discard{
     position: absolute;
-    right: 0px;
-    top: 7px;
+    right: 6px;
+    top: 9px;
     border-right: none !important;
+    color: black;
 }

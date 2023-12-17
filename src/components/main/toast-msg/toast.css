@@ -8,7 +8,7 @@
     align-items: center;
     color: white;
     background-color: black;
-    padding: 0 10px;
+    padding-inline: 10px;
     font-size: 15px;
 }
 
@@ -18,7 +18,7 @@
     position: absolute;
     top: 52px;
     right: 10px;
-    animation: progres 5s linear; 
+    animation: progres 5s ease; 
 }
 
 @keyframes progres{
@@ -40,4 +40,4 @@
     28%{
         width: 28%;
     }
-};
+}

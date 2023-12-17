@@ -1,11 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./header.css";
+import { toggleDarkMode } from "../store/actions/cart-action";
 
 const Header = () => {
   const [searchIsVisible, setSearchIsVisible] = React.useState(false);
+  // const [isDarkMode, setIsDarkMode] = React.useState(false);
+  const dispactch = useDispatch();
+  const isDarkMode = useSelector(state => state.cartProducts.isDarkMode)
+  console.log("======= isDarkMode", isDarkMode);
+
+  const darkMode = isDarkMode ? "switch_dark dark" : "switch_dark";
+  const header = isDarkMode ? "header header_dark" : "header";
   const cartProductList = useSelector(
     (state) => state.cartProducts.productList
   );
@@ -21,7 +29,7 @@ const Header = () => {
   console.log(cartProductList);
 
   return (
-    <header className="header">
+    <header className={header}>
       <div className="left_header">
         <div>logo</div>
         <nav>
@@ -59,15 +67,19 @@ const Header = () => {
           </div>
         )}
         <div>
-        <Link to="/cart">
-          <i className="fa-solid fa-cart-shopping">
-          <span>
-            {cartProductList.length ? cartProductList.length : null}
-          </span>
-          </i>
+          <Link to="/cart">
+            <i className="fa-solid fa-cart-shopping">
+              <span>
+                {cartProductList.length ? cartProductList.length : null}
+              </span>
+            </i>
           </Link>
         </div>
-        <button onClick={logOut}>logout</button>
+        <button className="logout_btn" onClick={logOut}>logout</button>
+        <div>
+          <input onChange={() => toggleDarkMode(!isDarkMode, dispactch)} id="switch" type="checkbox" className={darkMode}/>
+          <label htmlFor="switch" className="switch_label"></label>
+        </div>
       </div>
     </header>
   );

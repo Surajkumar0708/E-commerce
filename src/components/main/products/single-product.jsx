@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./single-product.css";
+import { useSelector } from "react-redux";
 
 const Product = ({ product }) => {
   const { category, image, description, title, price, rating, id } = product;
+  const isDarkMode = useSelector(state => state.cartProducts.isDarkMode)
   const productDescription =
     description.length > 50
       ? `${description.substring(0, 60)}...`
@@ -15,7 +17,7 @@ const Product = ({ product }) => {
     <div className="product">
       <div className="image">
         <Link to={`/products/${id}`}>
-        <img src={image} alt="product-image" />
+        <img src={image} alt="product-image" className={isDarkMode ? "img dark" : "img"} />
         </Link>
       </div>
       <div className="desc-container">

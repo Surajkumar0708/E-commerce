@@ -5,8 +5,8 @@ import "./cart.css"
 import { Link } from "react-router-dom";
 
 const Cart = () => {
+    const isDarkMode = useSelector(state => state.cartProducts.isDarkMode)
     const [totalCartAmount, setTotalCartItem] = React.useState(null)
-    // const [productList, setProductList] = React.useState([])
     const cartList = useSelector(state => state.cartProducts.productList)
     
     const totalAmount = cartList?.reduce((initialValue, currentValue)=>{
@@ -18,9 +18,8 @@ const Cart = () => {
         setTotalCartItem(totalAmount)
     },[cartList])
     
-    console.log("======= suraj",cartList);
     return (
-        <div className="cart-container">
+        <div className={isDarkMode ? "cart-container dark" : "cart-container"}>
             {cartList.length ? cartList.map(product => <CartItem key={product.id} product={product} />) : "Your cart is empty"}
             {cartList.length && <div className="total-container">
                 <h2>Total Cart Amount = <span>&#8377;</span> {(totalCartAmount * 87).toFixed()}</h2>

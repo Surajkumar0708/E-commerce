@@ -1,9 +1,14 @@
 .cart-container{
-    margin-top: 20px;
+    padding-top: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.dark {
+    background-color: black;
+    color: white;
 }
 
 .total-container{

@@ -2,13 +2,14 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import useFetchData from "../../hooks/use-fetch";
 import LoadingScreen from "../loading/loading";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setProductToCart } from "../store/actions/cart-action";
 
 import "./product-details.css";
 import Toast from "../toast-msg/toast";
 
 const ProductDetails = () => {
+  const isDarkMode = useSelector(state => state.cartProducts.isDarkMode)
   const pincodeRef = React.useRef(null)
   const [pinAvailCheckMsg, setPinAvailCheckMsg] = React.useState("");
   const pincodeArr = [497339, 497335, 497442]
@@ -31,8 +32,10 @@ const ProductDetails = () => {
     const enteredPincode = pincodeRef.current.value
     if(enteredPincode && pincodeArr.includes(+enteredPincode)) {
       setPinAvailCheckMsg("Delivery is available on selected pincode");
-    } else {
+    } else if(enteredPincode) {
       setPinAvailCheckMsg("Product is not available on selected pincode");
+    } else {
+      setPinAvailCheckMsg("Please enter the valid Pincode")
     }
   }
 
@@ -41,8 +44,8 @@ const ProductDetails = () => {
       {isLoading ? (
         <LoadingScreen />
       ) : (
-        <div className="details-page">
-          <div className="img-container">
+        <div className={isDarkMode ? "details-page dark" :"details-page "}>
+          <div className={isDarkMode ? "dark_border img-container" :"img-container"}>
             <img src={image} alt="" />
           </div>
           <div className="single-desc-container">

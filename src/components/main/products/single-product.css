@@ -8,10 +8,17 @@
     border-radius: 5px;
 }
 
-.image img{
-    width: 150px;
-    height: 180px;
+.image .img{
+    width: 30%;
+    aspect-ratio: 2/2;
+    object-fit: contain;
+    mix-blend-mode: color-burn;
 }
+
+.dark{
+    mix-blend-mode: normal !important;
+}
+
 .image img:hover{
     transform: scale(1.1);
     transition: 0.3s ease-in-out;

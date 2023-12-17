@@ -1,7 +1,7 @@
 .details-page{
     display: flex;
     justify-content: center;
-    margin-top: 40px;
+    padding-top: 40px;
 }
 
 .img-container {
@@ -9,6 +9,15 @@
     /* margin-right: 30px; */
     border-right: 3px solid black;
     /* border: 1px solid black; */
+}
+
+.dark {
+    background-color: black;
+    color: white;
+}
+
+.dark_border {
+    border-right: 3px solid white !important;
 }
 
 .img-container img{

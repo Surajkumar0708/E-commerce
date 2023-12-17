@@ -12,3 +12,8 @@ export const removeProductFromCart = (cartProduct, dispatch) => {
   console.log("===== remove", cartProduct.id);
   dispatch({ type: cartActionTypes.REMOVE_PRODUCT, payload: cartProduct });
 };
+
+export const toggleDarkMode = (darkMode, dispatch) => {
+  console.log("=========== value in action", darkMode);
+  dispatch({type: "dark_mode", payload: darkMode})
+}
