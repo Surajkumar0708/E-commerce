@@ -30,8 +30,8 @@ const Header = () => {
 
   const logOut = () => {
     localStorage.removeItem("usn");
-    navigate("/login");
     dispactch({ type: "logout", payload: !isLogin });
+    window.location.reload();
   };
 
   const searchBy = (e) => {
