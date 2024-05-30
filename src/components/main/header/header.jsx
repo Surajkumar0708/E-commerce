@@ -46,10 +46,9 @@ const Header = () => {
         {
           <nav>
             <ul>
-              <li>{isLogin && <Link to="/">Home</Link>}</li>
+              <li>{isLogin && <Link to="/">Product</Link>}</li>
               <li>{isLogin && <Link to="/about">About</Link>}</li>
               <li>{isLogin && <Link to="/services">Services</Link>}</li>
-              <li>{isLogin && <Link to="/products">Product</Link>}</li>
               <li>{isLogin && <Link to="/careers">Careers</Link>}</li>
             </ul>
           </nav>

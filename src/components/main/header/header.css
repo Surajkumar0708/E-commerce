@@ -18,12 +18,12 @@
 .header > .left_header {
   display: flex;
   justify-content: center;
-  align-items: centergb(63, 56, 56);
+  align-items: center;
 }
 
 .header > .left_header > nav > ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 500px;
 }

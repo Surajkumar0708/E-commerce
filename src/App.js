@@ -19,7 +19,6 @@ function App() {
   const renderApp = () => {
     const storageKey = localStorage.getItem("usn");
     if (storageKey === null) {
-      console.log("inside if");
       return (
         <HashRouter>
           <Header />
@@ -34,8 +33,7 @@ function App() {
         <HashRouter>
           <Header />
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/products" element={<ProductList />} />
+            <Route exact path="/" element={<ProductList />} />
             <Route exact path="/services" element={<Services />} />
             <Route exact path="/about" element={<About />} />
             <Route exact path="/careers" element={<Careers />} />
