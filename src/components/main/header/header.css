@@ -1,66 +1,66 @@
-.header{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    box-shadow: 2px 2px 10px rgba(84, 82, 82, 0.623);
-    position: sticky;
-    top: 0;
-    background-color: #fff;
+.header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  box-shadow: 2px 2px 10px rgba(84, 82, 82, 0.623);
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  height: 50px;
 }
 
 .header_dark {
-    color: white;
-    background-color: black;
+  color: white;
+  background-color: black;
 }
 
-.header > .left_header{
-    display: flex;
-    justify-content: center;
-    align-items: centergb(63, 56, 56)
+.header > .left_header {
+  display: flex;
+  justify-content: center;
+  align-items: centergb(63, 56, 56);
 }
 
 .header > .left_header > nav > ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 500px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
 }
 
 .header > .left_header > nav > ul > li {
-    list-style: none;
+  list-style: none;
 }
 
-.header > .left_header > nav > ul > li > a{
-    text-decoration: none;
-    flex: 1;
-    padding: 4px 9px;
-    color: black;
+.header > .left_header > nav > ul > li > a {
+  text-decoration: none;
+  flex: 1;
+  padding: 4px 9px;
+  color: black;
 }
 
 .header_dark > .left_header > nav > ul > li > a,
 .header_dark > .right_nav > div > a,
-.header_dark > .discard
-{
-    color: white;
+.header_dark > .discard {
+  color: white;
 }
 
 .header > .left_header > nav > ul > li > a:hover,
 .header > .left_header > nav > ul > li > a:focus {
-    border-radius: 4px;
-    background-color: rgba(84, 82, 82, 0.623);
-    color: white;
+  border-radius: 4px;
+  background-color: rgba(84, 82, 82, 0.623);
+  color: white;
 }
 
-.right_nav{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: x-large;
+.right_nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: x-large;
 }
 
-.right_nav > div{
-    cursor: pointer;
+.right_nav > div {
+  cursor: pointer;
 }
 
 /* .right_nav > div > i{
@@ -68,92 +68,97 @@
     padding:0 15px 0;
 } */
 
-.right_nav > div > a{
-    color: black;
-    border-right: 2px solid black ;
-    padding:0 15px 0;
+.right_nav > div > a {
+  color: black;
+  border-right: 2px solid black;
+  padding: 0 15px 0;
 }
 
-.right_nav > div > a > i > span{
-    font-size: 13px;
-    position: relative;
-    bottom: 17px;
+.right_nav > div > a > i > span {
+  font-size: 13px;
+  position: relative;
+  bottom: 17px;
 }
 
-.right_nav > .logout_btn{
-    background-color: rgba(196, 48, 48, 0.84);
-    color: white;
-    border: none;
-    margin-left: 15px;
-    padding: 6px 15px;
-    font-size: 15px;
-    font-weight: bold;
-    text-transform: capitalize;
-    border-radius: 3px;
-    cursor: pointer;
+.right_nav > .logout_btn {
+  background-color: rgb(246, 33, 33);
+  color: white;
+  border: none;
+  margin-left: 15px;
+  padding: 6px 15px;
+  font-size: 15px;
+  font-weight: bold;
+  text-transform: capitalize;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.right_nav > .logout_btn:hover {
+  background-color: rgb(158, 47, 47);
+  transition: all 0.3s ease;
 }
 
 .switch_dark {
-    display: none;
+  display: none;
 }
 
-.switch_label{
-    display: inline-block;
-    width: 40px;
-    height: 20px;
-    background-color: black;
-    border-radius: 10px;
-    position: relative;
-    cursor: pointer;
-    margin-left: 15px;
+.switch_label {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: black;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 .dark:checked + .switch_label::before {
-    content: "";
-    width: 18px;
-    height: 18px;
-    background-color: black;
-    border-radius: 50%;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    transition: 0.2s;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: 0.2s;
 }
 
 .dark:checked + .switch_label {
-    background-color: white;
+  background-color: white;
 }
 
 .dark:checked + .switch_label::before {
-    left: calc(100% - 20px);
+  left: calc(100% - 20px);
 }
 
 .switch_label::before {
-    content: "";
-    width: 18px;
-    height: 18px;
-    background-color: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 1px;
-    left: 1px;
-    transition: 0.2s;
+  content: "";
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  transition: 0.2s;
 }
 
-.search_container{
-    position: relative;
-    transition: 1s ease-out;
+.search_container {
+  position: relative;
+  transition: 1s ease-out;
 }
 
-.searchbar{
-    padding: 5px 10px;
-    width: 200px;
+.searchbar {
+  padding: 5px 10px;
+  width: 200px;
 }
 
-.discard{
-    position: absolute;
-    right: 6px;
-    top: 9px;
-    border-right: none !important;
-    color: black;
+.discard {
+  position: absolute;
+  right: 6px;
+  top: 9px;
+  border-right: none !important;
+  color: black;
 }

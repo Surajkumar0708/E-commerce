@@ -1,31 +1,57 @@
 import React from "react";
+import "./loginStyle.css";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
-    const [usn, setUsn] = React.useState("");
-    const [pass, setPass] = React.useState("");
-    const loginHandle = (e) => {
-        e.preventDefault();
-        if(usn && pass){
-            localStorage.setItem("usn", usn)
-            window.location.href = "http://localhost:3000/"
-            // window.location.reload()
-        }
+  const [username, setUsername] = React.useState("");
+  const [password, setPassword] = React.useState("");
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    if (username && password) {
+      localStorage.setItem("usn", username);
+      window.location.href = "http://localhost:3000/";
     }
-    return(
-        <form onSubmit={loginHandle}>
-            <div>
-                <label htmlFor="usn">Username</label>
-                <input id="usn" type="text"  onChange={(e) => setUsn(e.target.value)}/>
-            </div>
-            <div>
-                <label htmlFor="pass">Password</label>
-                <input id="pass" type="password" onChange={(e) => setPass(e.target.value)} />
-            </div>
-            <div>
-                <button>Login</button>
-            </div>
-        </form>
-    )
-}
+  };
+
+  return (
+    <div className="main-container">
+      <div className="login-container">
+        <div className="login-header">
+          <h2>Login</h2>
+        </div>
+        <div className="login-form">
+          <div className="form-group">
+            <label htmlFor="username">Username:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              placeholder="Enter your username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="form-group">
+            <button type="button" onClick={handleLogin}>
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Login;

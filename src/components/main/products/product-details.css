@@ -1,71 +1,71 @@
-.details-page{
-    display: flex;
-    justify-content: center;
-    padding-top: 40px;
+.details-page {
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
 }
 
 .img-container {
-    width: 45%;
-    /* margin-right: 30px; */
-    border-right: 3px solid black;
-    /* border: 1px solid black; */
+  width: 45%;
+  /* margin-right: 30px; */
+  border-right: 3px solid black;
+  /* border: 1px solid black; */
 }
 
 .dark {
-    background-color: black;
-    color: white;
+  background-color: black;
+  color: white;
 }
 
 .dark_border {
-    border-right: 3px solid white !important;
+  border-right: 3px solid white !important;
 }
 
-.img-container img{
-    width: 80%;
+.img-container img {
+  width: 80%;
 }
 
-.single-desc-container{
-    padding-left: 100px;
-    width: 45%;
+.single-desc-container {
+  padding-left: 100px;
+  width: 45%;
 }
 
-.product-price{
-    width: 80px;
-    height: 35px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid red;
+.product-price {
+  width: 80px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
 }
 
-.add-to-cart-btn{
-    margin-top: 30px;
+.add-to-cart-btn {
+  margin-top: 30px;
 }
 
-.add-to-cart-btn button{
-    font-size: 16px;
-    padding: 6px 18px;
-    border: none;
-    background-color: rgba(89, 95, 101, 0.69);
-    border-radius: 3px;
-    color: white;
-    font-weight: bold;
-    cursor: pointer;
+.add-to-cart-btn button {
+  font-size: 16px;
+  padding: 6px 18px;
+  border: none;
+  background-color: rgba(89, 95, 101, 0.69);
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.pincode{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    margin: 20px 0;
+.pincode {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 20px 0;
 }
 
-.pincode > input{
-    padding: 5px;
-    font-size: 15px;
-    margin-bottom: 10px;
-    border: none;
-    border-bottom: 2px solid red;
+.pincode > input {
+  padding: 5px;
+  font-size: 15px;
+  margin-bottom: 10px;
+  border: none;
+  border-bottom: 2px solid red;
 }
 
 .pincode > input::-webkit-outer-spin-button,
@@ -74,10 +74,10 @@
   margin: 0;
 }
 
-.red_str{
-    color: red;
+.red_str {
+  color: red;
 }
 
 .green_str {
-    color: green;
+  color: green;
 }
