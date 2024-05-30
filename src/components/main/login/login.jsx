@@ -1,16 +1,18 @@
 import React from "react";
 import "./loginStyle.css";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const Login = () => {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const currentLocation = useLocation();
 
   const handleLogin = (e) => {
     e.preventDefault();
     if (username && password) {
       localStorage.setItem("usn", username);
-      window.location.href = "http://localhost:3000/";
+      window.location.reload();
     }
   };
 
